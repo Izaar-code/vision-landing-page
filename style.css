@@ -1,0 +1,806 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: black;
+  color: #ffffff;
+}
+
+.frame {
+  background-color: #101820;
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 0 68px;
+}
+
+/* =====================
+   HEADER
+   ===================== */
+.header {
+  padding: 27px 0;
+  margin-bottom: 15px;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.logo span {
+  color: #FEE715;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #c9c9c9;
+  font-weight: 500;
+}
+
+/* BUTTONS */
+.btn,
+.btn-primary,
+.btn-secondary,
+.btn-green,
+.btn-cta {
+  padding: 15px 35px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+  background-color: #FEE715;
+  color: #101820;
+  display: inline-block;
+  transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover,
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-green:hover,
+.btn-cta:hover {
+  background-color: #cfbc0c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(254, 231, 21, 0.25);
+}
+
+.btn:active,
+.btn-primary:active,
+.btn-secondary:active,
+.btn-green:active,
+.btn-cta:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* =====================
+   HERO
+   ===================== */
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 128px;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 500px;
+  align-items: flex-start;
+}
+
+.hero-text h1 { font-size: 48px; }
+
+.hero-text p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #c9c9c9;
+}
+
+.hero-image { flex: 1; }
+.hero-image img { max-width: 100%; }
+
+/* =====================
+   FEATURES
+   ===================== */
+.features-content {
+  margin: 90px auto;
+  display: flex;
+  flex-direction: column;
+  /* FIX: stretch so children fill width, not flex-start which clips to content */
+  align-items: stretch;
+  gap: 45px;
+}
+
+.features-title {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* FIX: center the logo row — it was left-aligned because ul width = content width */
+.features-blocks {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.features-blocks ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  /* FIX: center tiles when they wrap (at high zoom) */
+  justify-content: center;
+}
+
+.features-blocks li {
+  width: 230px;
+  height: 100px;
+  background: #1A232E;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.features-blocks img {
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: contain;
+}
+
+/* =====================
+   EXPERTISE
+   ===================== */
+.expertise-content {
+  display: flex;
+  flex-direction: column;
+  margin: 170px auto 90px auto;
+  gap: 28px;
+  /* FIX: stretch so children take full width */
+  align-items: stretch;
+}
+
+/* FIX: wrap so cards + text reflow at narrow widths / high zoom
+   instead of text falling below */
+.upper-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+/* Cards group never shrinks below its natural size */
+.upper-cards { flex-shrink: 0; }
+
+/* Text takes remaining space, min 260px so it doesn't collapse */
+.upper-text {
+  flex: 1;
+  min-width: 260px;
+}
+
+.upper-text h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.upper-text p {
+  font-size: 16px;
+  color: #c9c9c9;
+  line-height: 1.5;
+}
+
+.lower-content {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.upper-cards ul,
+.lower-cards ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+
+.expertise-content li {
+  width: 287px;
+  height: 240px;
+  background-color: #1A232E;
+  border-radius: 12px;
+  padding: 45px 30px 30px 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 30px;
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+/* =====================
+   WHY CHOOSE
+   ===================== */
+.why-choose { margin: 170px auto; }
+
+.why-choose-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+}
+
+.why-choose-image { flex: 1; }
+
+.why-choose-image img {
+  width: 100%;
+  max-width: 607px;
+  height: auto;
+  object-fit: contain;
+}
+
+.why-choose-text {
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.why-choose-text h2 {
+  font-size: 48px;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+.why-choose-text h2 span {
+  color: #FEE715;
+}
+
+.why-choose-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #c9c9c9;
+  margin-bottom: 40px;
+}
+
+
+
+/* =====================
+   LATEST WORK
+   ===================== */
+.latest-work { margin: 170px auto 90px auto; }
+
+.latest-work-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 48px;
+}
+
+.latest-work-content h2 {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+/* FIX: CSS Grid instead of flexbox.
+   All 3 cells share the SAME row definitions:
+   row 1 = image (auto height based on aspect-ratio),
+   row 2 = text (starts at the same line for every card). */
+.work-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* row 1: image height driven by aspect-ratio; row 2: text */
+  grid-template-rows: auto 1fr;
+  gap: 28px 28px;
+  width: 100%;
+  /* Each card spans both rows as a subgrid column */
+  align-items: start;
+}
+
+/* Each card is itself a 2-row subgrid column so image + text
+   align across all 3 cards */
+.work-card {
+  display: grid;
+  /* inherit the parent's row heights so all text starts at the same Y */
+  grid-row: span 1;
+  grid-template-rows: subgrid;
+  /* Fallback for browsers without subgrid: just flex column */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Fixed-ratio image — identical height in every card */
+.work-card-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.work-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+.work-card-image img:hover { transform: scale(1.04); }
+
+.work-card-text {
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.work-card-text h3 {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.work-card-text p {
+  font-size: 16px;
+  color: #c9c9c9;
+  line-height: 1.6;
+}
+
+/* =====================
+   RESPONSIVE — Tablet landscape (≤ 1024px)
+   ===================== */
+@media (max-width: 1024px) {
+  .container { padding: 0 40px; }
+
+  nav ul { gap: 28px; }
+
+  .hero-content { gap: 60px; }
+  .hero-text h1 { font-size: 38px; }
+
+  .expertise-content { margin: 100px auto 60px auto; }
+  .expertise-content li { width: 220px; height: 210px; font-size: 17px; }
+
+  .why-choose-content { gap: 60px; }
+  .why-choose-text h2 { font-size: 36px; }
+
+  .latest-work { margin: 100px auto 60px auto; }
+  .latest-work-content h2 { font-size: 38px; }
+  .work-cards { gap: 20px; }
+  .work-card-text h3 { font-size: 19px; }
+}
+
+/* =====================
+   RESPONSIVE — Tablet portrait (≤ 768px)
+   ===================== */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .header .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  nav ul { gap: 20px; flex-wrap: wrap; }
+
+  /* Hero */
+  .hero-content { flex-direction: column; gap: 40px; align-items: flex-start; }
+  .hero-text { max-width: 100%; }
+  .hero-text h1 { font-size: 32px; }
+  .hero-image { width: 100%; }
+
+  /* Features */
+  .features-content { margin: 60px auto; gap: 28px; }
+  .features-blocks ul { gap: 12px; }
+  .features-blocks li { width: 140px; height: 80px; }
+
+  /* Expertise */
+  .expertise-content { margin: 70px auto 40px auto; }
+  .expertise-content li { width: calc(50% - 12px); height: auto; min-height: 180px; font-size: 16px; padding: 30px 20px; }
+
+  /* Why choose */
+  .why-choose { margin: 70px auto; }
+  .why-choose-content { flex-direction: column; gap: 40px; align-items: flex-start; }
+  .why-choose-image, .why-choose-text { flex: none; width: 100%; max-width: 100%; }
+  .why-choose-text h2 { font-size: 32px; }
+
+  /* Latest work — 2 columns */
+  .latest-work { margin: 70px auto 40px auto; }
+  .latest-work-content h2 { font-size: 32px; }
+  .work-cards { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+}
+
+/* =====================
+   RESPONSIVE — Mobile (≤ 480px)
+   ===================== */
+@media (max-width: 480px) {
+  .container { padding: 0 20px; }
+
+  .logo { font-size: 24px; }
+  nav ul { gap: 14px; }
+  nav a { font-size: 14px; }
+  .btn { padding: 12px 24px; font-size: 14px; }
+
+  .hero-text h1 { font-size: 28px; }
+  .hero-text p { font-size: 15px; }
+
+  .features-title { flex-direction: column; gap: 8px; }
+  .features-title h2 { font-size: 20px; }
+  .features-blocks li { width: calc(50% - 6px); height: 72px; }
+
+  .upper-text h1 { font-size: 28px; }
+  .expertise-content li { width: 100%; min-height: 160px; }
+
+  .why-choose-text h2 { font-size: 26px; }
+  .why-choose-text p { font-size: 15px; }
+
+  /* Latest work — single column */
+  .latest-work-content h2 { font-size: 28px; }
+  .work-cards { grid-template-columns: 1fr; }
+  .work-card-text h3 { font-size: 20px; }
+}
+
+/* =====================
+   TESTIMONIALS
+   ===================== */
+
+.testimonials {
+  background-color: #1C2B3A;
+  margin: 0;
+  padding: 90px 0 80px;
+}
+
+.testimonials-content {
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 0 68px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 52px;
+}
+
+.testimonials-content h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #ffffff;
+  align-self: flex-start;
+}
+
+/* ---- Slider row: [arrow] [track] [arrow] ---- */
+.testimonials-slider-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Arrow buttons */
+.testimonials-arrow {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #2E3F52;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s, opacity 0.2s;
+}
+
+.testimonials-arrow:hover {
+  background: #2E3F52;
+  border-color: #ffffff;
+}
+
+/* Track clips overflow — only one slide wide visible at a time */
+.testimonials-track-wrapper {
+  flex: 1;
+  overflow: hidden;
+}
+
+.testimonials-track {
+  display: flex;
+  /* No gap between slides — each slide fills 100% of wrapper width */
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---- Each slide: full wrapper width, 3-column grid of cards ---- */
+.testimonials-slide {
+  flex: 0 0 100%;          /* exactly one slide visible */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+/* ---- Card ---- */
+.testimonial-card {
+  background-color: #101820;
+  border-radius: 16px;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  box-sizing: border-box;
+}
+
+/* ---- Author row ---- */
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.testimonial-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #2E3F52;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+}
+
+.testimonial-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.testimonial-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.testimonial-role {
+  font-size: 14px;
+  color: #8A9BB0;
+}
+
+.testimonial-card p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: #c9c9c9;
+}
+
+/* ---- Dots — centered ---- */
+.testimonials-dots {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.dot {
+  width: 32px;
+  height: 5px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  background-color: #2E3F52;
+  transition: background-color 0.25s, width 0.25s;
+  padding: 0;
+}
+
+.dot.active {
+  background-color: #FEE715;
+  width: 48px;
+}
+
+/* =====================
+   TESTIMONIALS — Responsive
+   ===================== */
+@media (max-width: 1024px) {
+  .testimonials-content { padding: 0 40px; }
+  .testimonials-content h2 { font-size: 38px; }
+  .testimonials-slide { grid-template-columns: repeat(2, 1fr); }
+  .testimonial-card { padding: 28px 24px; }
+}
+
+@media (max-width: 768px) {
+  .testimonials { padding: 70px 0 60px; }
+  .testimonials-content { padding: 0 24px; gap: 36px; }
+  .testimonials-content h2 { font-size: 32px; }
+  .testimonials-slide { grid-template-columns: 1fr; }
+  .testimonials-arrow { width: 40px; height: 40px; }
+  .testimonials-slider-row { gap: 12px; }
+}
+
+@media (max-width: 480px) {
+  .testimonials-content { padding: 0 20px; }
+  .testimonials-content h2 { font-size: 28px; }
+  .testimonials-arrow { display: none; }
+}
+/* =====================
+   FOOTER CTA SECTION
+   ===================== */
+.footer-cta {
+  background-color: #101820;
+  overflow: hidden;
+  position: relative;
+}
+
+.footer-cta-inner {
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 90px 68px 0 68px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.footer-cta-text {
+  flex: 1;
+  max-width: 560px;
+  padding-bottom: 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.footer-cta-text h2 {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #ffffff;
+}
+
+.footer-cta-text p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: #c9c9c9;
+}
+
+.footer-cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+
+
+.footer-cta-or {
+  font-size: 16px;
+  color: #c9c9c9;
+}
+
+.footer-cta-phone {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.footer-cta-phone:hover {
+  color: #FEE715;
+}
+
+.phone-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Visual side: background shape + person */
+.footer-cta-visual {
+  position: relative;
+  flex-shrink: 0;
+  width: 480px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.footer-bg-shape {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 360px;
+  height: auto;
+  opacity: 0.35;
+  pointer-events: none;
+  user-select: none;
+}
+
+.footer-person {
+  position: relative;
+  z-index: 1;
+  width: 380px;
+  max-width: 100%;
+  display: block;
+  object-fit: contain;
+  object-position: bottom;
+}
+
+
+
+/* =====================
+   FOOTER — Responsive
+   ===================== */
+@media (max-width: 1024px) {
+  .footer-cta-inner { padding: 70px 40px 0 40px; gap: 40px; }
+  .footer-cta-text h2 { font-size: 38px; }
+  .footer-cta-visual { width: 380px; }
+  .footer-person { width: 320px; }
+}
+
+@media (max-width: 768px) {
+  .footer-cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 60px 24px 0 24px;
+    gap: 40px;
+  }
+  .footer-cta-text { padding-bottom: 0; max-width: 100%; }
+  .footer-cta-text h2 { font-size: 32px; }
+  .footer-cta-visual {
+    width: 100%;
+    justify-content: center;
+  }
+  .footer-person { width: 280px; }
+
+  .footer-bottom { padding: 24px; gap: 16px; flex-direction: column; align-items: flex-start; }
+  .footer-nav ul { gap: 20px; }
+}
+
+@media (max-width: 480px) {
+  .footer-cta-text h2 { font-size: 26px; }
+  .footer-cta-text p { font-size: 14px; }
+  .footer-nav ul { gap: 14px; }
+  .footer-nav a { font-size: 14px; }
+}
