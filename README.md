@@ -1,9 +1,9 @@
- vision-landing-page
+vision-landing-page
 
 Адаптивный современный лендинг для маркетингового digital-агентства **Vision**. 
 
 # 🚀 Ссылка на проект (Live Demo)
-👉 [Посмотреть живой сайт](СЮДА_ВСТАВИШЬ_ССЫЛКУ_ИЗ_ШАГА_5)
+👉 https://izaar-code.github.io/vision-landing-page/
 
 # 🛠 Используемые технологии
  HTML5 — семантическая разметка сайта
